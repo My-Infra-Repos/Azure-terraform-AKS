@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: gateway-ingress
+  annotations:
+    kubernetes.io/ingress.class: azure/application-gateway
+    appgw.ingress.kubernetes.io/backend-path-prefix: "/"
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /service1/*
+        pathType: Prefix
+        backend:
+          service:
+            name: k8-boot-graphql-rest-aks-apm-test
+            port:
+              number: 8081
+      - path: /service2/*
+        pathType: Prefix
+        backend:
+          service:
+            name: k8-sboot-restapi-test
+            port:
+              number: 8080
