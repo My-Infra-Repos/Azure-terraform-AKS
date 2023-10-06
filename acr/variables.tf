@@ -5,7 +5,7 @@ variable "location" {
 }
 
 variable "name" {
-  default="prmnonprodacr"
+  default="examplenonprodacr"
   type = string
 }
 

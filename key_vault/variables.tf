@@ -19,7 +19,7 @@ variable "location" {
 
 variable "name" {
   type        = string
-  default ="prm-non-prod-keyvalult"
+  default ="example-non-prod-keyvalult"
   description = "The name of the Azure Key Vault"
 }
 

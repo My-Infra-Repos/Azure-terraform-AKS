@@ -58,7 +58,7 @@ resource "azurerm_kubernetes_cluster" "aks" {
   //  ingress_application_gateway {
   //   subnet_id = azurerm_subnet.appgwsubnet.id
   //   // subnet_cidr = "10.2.4.0/28"
-  //   gateway_name = "prmag-appgw"
+  //   gateway_name = "exampleag-appgw"
   //   gateway_ip_configuration {
   //   name      = "appgw-ip-config"
   //   subnet_id = azurerm_subnet.appgwsubnet.id

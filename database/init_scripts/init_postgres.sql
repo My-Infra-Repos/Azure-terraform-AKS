@@ -1702,8 +1702,8 @@ BEGIN
                                         r.lifecycle_completed, r.lifecycle_uuid, r.lifecycle_context, r.agents_status, r.ready, r.pending, r.metrics, r.parent_seq, r.offset_value), $4))
                                 and r.kind not in (''''policy'''', ''''kind'''', ''''agent'''', ''''namespace'''',
                                         ''''role'''', ''''service-account'''', ''''secret'''', ''''group'''',
-                                        ''''prm.namespace-users.v1'''', ''''prm.namespace-apps.v1'''',
-                                        ''''prm.rg-standard.v1'''', ''''prm.rg-app.v1'''',''''quota'''')
+                                        ''''example.namespace-users.v1'''', ''''example.namespace-apps.v1'''',
+                                        ''''example.rg-standard.v1'''', ''''example.rg-app.v1'''',''''quota'''')
                                 and r.resource_id != $5'' || group_by ||
                  '' group by r.resource_id) select count(resource_id) from resources r '')
                  into current using Quota.scoped_namespace, Quota.filter_kinds, Quota.filter_names, Quota.filter_attributes, Resource.resource_id;
@@ -1747,8 +1747,8 @@ BEGIN
                                 -- filter out system kinds
                                 and r.kind not in (''policy'', ''kind'', ''agent'', ''namespace'',
                                         ''role'', ''service-account'', ''secret'', ''group'',
-                                        ''prm.namespace-users.v1'', ''prm.namespace-apps.v1'',
-                                        ''prm.rg-standard.v1'', ''prm.rg-app.v1'',''quota'')
+                                        ''example.namespace-users.v1'', ''example.namespace-apps.v1'',
+                                        ''example.rg-standard.v1'', ''example.rg-app.v1'',''quota'')
                                 -- filter in case of update
                                 and r.resource_id != Resource.resource_id
                                 group by r.resource_id
@@ -1861,40 +1861,40 @@ BEGIN
                                 Resource.offset_value), filter_attributes))
         )
         LOOP
-                -- Check to make sure each quota is currently supported by PRM
+                -- Check to make sure each quota is currently supported by example
 
                 -- Raise notice for subscription, which is unsupported
                 IF quota_row.type = ''subscription'' THEN
-                        RAISE NOTICE ''Quota: % has type = subscription, which is currently unsupported by PRM. Contact the PRM team if you have any questions!'', quota_row.name;
+                        RAISE NOTICE ''Quota: % has type = subscription, which is currently unsupported by example. Contact the example team if you have any questions!'', quota_row.name;
                         CONTINUE;
                 END IF;
 
                 -- Raise notice for quota with aggregation = sum or maximum, which is unsupported
                 IF quota_row.aggregation != ''count'' THEN
-                        RAISE NOTICE ''Quota: % has an aggregation other than count, which is currently unsupported by PRM. Contact the PRM team if you have any questions!'', quota_row.name;
+                        RAISE NOTICE ''Quota: % has an aggregation other than count, which is currently unsupported by example. Contact the example team if you have any questions!'', quota_row.name;
                         CONTINUE;
                 END IF;
 
                 -- Raise notice for quota with negative scope, which is unsupported
                 IF quota_row.scope < 0 THEN
-                        RAISE NOTICE ''Quota: % has a scope that is negative, which is currently unsupported by PRM. Contact the PRM team if you have any questions!'', quota_row.name;
+                        RAISE NOTICE ''Quota: % has a scope that is negative, which is currently unsupported by example. Contact the example team if you have any questions!'', quota_row.name;
                         CONTINUE;
                 END IF;
 
                 -- Raise notice for quota with value_attribute_path, which is unsupported
                 IF quota_row.value_attribute_path is not null THEN
-                        RAISE NOTICE ''Quota: % has a value attribute path, which is currently unsupported by PRM. Contact the PRM team if you have any questions!'', quota_row.name;
+                        RAISE NOTICE ''Quota: % has a value attribute path, which is currently unsupported by example. Contact the example team if you have any questions!'', quota_row.name;
                         CONTINUE;
                 END IF;
 
                 -- Raise notice for quota with value_number_default, which is unsupported
                 IF quota_row.value_number_default is not null THEN
-                        RAISE NOTICE ''Quota: % has a default value, which is currently unsupported by PRM. Contact the PRM team if you have any questions!'', quota_row.name;
+                        RAISE NOTICE ''Quota: % has a default value, which is currently unsupported by example. Contact the example team if you have any questions!'', quota_row.name;
                 END IF;
 
                 -- Raise notice for quota with comparison_attribute_path, which is unsupported
                 IF quota_row.comparison_attribute_path is not null THEN
-                        RAISE NOTICE ''Quota: % has a comparison value, which is currently unsupported by PRM. Contact the PRM team if you have any questions!'', quota_row.name;
+                        RAISE NOTICE ''Quota: % has a comparison value, which is currently unsupported by example. Contact the example team if you have any questions!'', quota_row.name;
                 END IF;
 
                 IF quota_row.block_actions is not null and action = any(quota_row.block_actions) THEN

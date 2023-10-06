@@ -19,7 +19,7 @@ resource "azurerm_user_assigned_identity" "agidentity" {
 # The ingress controller requires the following permissions:
 # - Reader on the resource group
 # - Contributor on the App gateway
-# - Managed Identity Operator on the user created identity
+# - Managed Identity exampleerator on the user created identity
 #
 
 resource "azurerm_role_assignment" "appgwreader" {
@@ -30,7 +30,7 @@ resource "azurerm_role_assignment" "appgwreader" {
 
 resource "azurerm_role_assignment" "mi_operator_ag" {
   scope                = data.terraform_remote_state.rg.outputs.id
-  role_definition_name = "Managed Identity Operator"
+  role_definition_name = "Managed Identity exampleerator"
   principal_id         = azurerm_user_assigned_identity.agidentity.principal_id
 }
 
@@ -42,7 +42,7 @@ resource "azurerm_role_assignment" "agic_contrib" {
 
 resource "azurerm_role_assignment" "mi_operator_agic" {
   scope                = azurerm_user_assigned_identity.agidentity.id
-  role_definition_name = "Managed Identity Operator"
+  role_definition_name = "Managed Identity exampleerator"
   // principal_id         = var.aks_object_id
   principal_id         = data.terraform_remote_state.aks.outputs.kubelet_identity
 

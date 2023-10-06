@@ -1,6 +1,6 @@
 variable "app_name" {
   type        = string
-  default ="prmapplication"
+  default ="exampleapplication"
   description = "Application name. Use only lowercase letters and numbers"
 }
 

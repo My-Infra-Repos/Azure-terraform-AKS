@@ -1,7 +1,7 @@
 variable "name" {
   
   type = string
-  default="vnet-prm-non-prod"
+  default="vnet-example-non-prod"
 }
 
 // variable "resource_group_name" {

@@ -1,8 +1,8 @@
 #!/bin/bash
 
-RESOURCE_GROUP_NAME=tfstate-prm-non-prod
-STORAGE_ACCOUNT_NAME=tfstprmaccount
-CONTAINER_NAME=tfstprmcontainer
+RESOURCE_GROUP_NAME=tfstate-example-non-prod
+STORAGE_ACCOUNT_NAME=tfstexampleaccount
+CONTAINER_NAME=tfstexamplecontainer
 
 # Create resource group
 az group create --name $RESOURCE_GROUP_NAME --location centralUS

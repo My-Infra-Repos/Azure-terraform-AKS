@@ -14,12 +14,12 @@ spec:
     spec:
       containers:
       - name: user-api
-        image: acrprmapplication.azurecr.io/user-api/user-api:v2
+        image: acrexampleapplication.azurecr.io/user-api/user-api:v2
         ports:
         - containerPort: 8290
         env:
         - name: DATABASE_HOST
-          value: "prmdb-psql.postgres.database.azure.com"
+          value: "exampledb-psql.postgres.database.azure.com"
         - name: DATABASE_USER
           value: "psqladmin"
         - name: DATABASE_PASSWORD

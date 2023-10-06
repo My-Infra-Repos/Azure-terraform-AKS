@@ -5,9 +5,9 @@ data "terraform_remote_state" "rg" {
   // backend = "remote"
   backend = "azurerm"
   config = {
-    resource_group_name   = "tfstate-prm-non-prod"
-    storage_account_name  = "tfstprmaccount"
-    container_name        = "tfstprmcontainer"
+    resource_group_name   = "tfstate-example-non-prod"
+    storage_account_name  = "tfstexampleaccount"
+    container_name        = "tfstexamplecontainer"
     key                   = "rg.tfstate"
 
   }
@@ -17,9 +17,9 @@ data "terraform_remote_state" "vnet" {
   // backend = "remote"
   backend = "azurerm"
   config = {
-    resource_group_name   = "tfstate-prm-non-prod"
-    storage_account_name  = "tfstprmaccount"
-    container_name        = "tfstprmcontainer"
+    resource_group_name   = "tfstate-example-non-prod"
+    storage_account_name  = "tfstexampleaccount"
+    container_name        = "tfstexamplecontainer"
     key                   = "vnet.tfstate"
 
   }
@@ -28,9 +28,9 @@ data "terraform_remote_state" "vnet" {
 data "terraform_remote_state" "acr" {
   backend="azurerm"
   config={
-    resource_group_name   = "tfstate-prm-non-prod"
-    storage_account_name  = "tfstprmaccount"
-    container_name        = "tfstprmcontainer"
+    resource_group_name   = "tfstate-example-non-prod"
+    storage_account_name  = "tfstexampleaccount"
+    container_name        = "tfstexamplecontainer"
     key                   = "acr.tfstate"
   }
 }
@@ -38,9 +38,9 @@ data "terraform_remote_state" "acr" {
 data "terraform_remote_state" "kv" {
   backend="azurerm"
   config={
-    resource_group_name   = "tfstate-prm-non-prod"
-    storage_account_name  = "tfstprmaccount"
-    container_name        = "tfstprmcontainer"
+    resource_group_name   = "tfstate-example-non-prod"
+    storage_account_name  = "tfstexampleaccount"
+    container_name        = "tfstexamplecontainer"
     key                   = "kv.tfstate"
   }
 }
@@ -48,9 +48,9 @@ data "terraform_remote_state" "kv" {
 data "terraform_remote_state" "la" {
   backend="azurerm"
   config={
-    resource_group_name   = "tfstate-prm-non-prod"
-    storage_account_name  = "tfstprmaccount"
-    container_name        = "tfstprmcontainer"
+    resource_group_name   = "tfstate-example-non-prod"
+    storage_account_name  = "tfstexampleaccount"
+    container_name        = "tfstexamplecontainer"
     key                   = "loganalytics.tfstate"
   }
 }
@@ -58,9 +58,9 @@ data "terraform_remote_state" "la" {
 data "terraform_remote_state" "akssubnet" {
   backend="azurerm"
   config={
-    resource_group_name   = "tfstate-prm-non-prod"
-    storage_account_name  = "tfstprmaccount"
-    container_name        = "tfstprmcontainer"
+    resource_group_name   = "tfstate-example-non-prod"
+    storage_account_name  = "tfstexampleaccount"
+    container_name        = "tfstexamplecontainer"
     key                   = "akssubnet.tfstate"
   }
 }
@@ -68,9 +68,9 @@ data "terraform_remote_state" "akssubnet" {
 // data "terraform_remote_state" "apg" {
 //   backend="azurerm"
 //   config={
-//     resource_group_name   = "tfstate-prm-non-prod"
-//     storage_account_name  = "tfstprmaccount"
-//     container_name        = "tfstprmcontainer"
+//     resource_group_name   = "tfstate-example-non-prod"
+//     storage_account_name  = "tfstexampleaccount"
+//     container_name        = "tfstexamplecontainer"
 //     key                   = "appgateway.tfstate"
 //   }
 // }

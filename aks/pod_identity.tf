@@ -57,12 +57,12 @@ resource "azurerm_role_assignment" "vm_contributor" {
 resource "azurerm_role_assignment" "all_mi_operator" {
   scope                = data.azurerm_resource_group.aks_node_rg.id
   principal_id         = azurerm_kubernetes_cluster.aks.kubelet_identity.0.object_id
-  role_definition_name = "Managed Identity Operator"
+  role_definition_name = "Managed Identity exampleerator"
 }
 
 resource "azurerm_role_assignment" "mi_operator_podidentity" {
   scope                = azurerm_user_assigned_identity.podidentity.id
-  role_definition_name = "Managed Identity Operator"
+  role_definition_name = "Managed Identity exampleerator"
   principal_id         = azurerm_kubernetes_cluster.aks.kubelet_identity.0.object_id
 }
 

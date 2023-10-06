@@ -8,7 +8,7 @@ resource "azurerm_public_ip_prefix" "nat_prefix" {
   zones               = ["1"]
 }
 resource "azurerm_nat_gateway" "nat_gw_aks" {
-  name                    = "natgw-aks-prm"
+  name                    = "natgw-aks-example"
   resource_group_name     = data.terraform_remote_state.rg.outputs.name
   location                = var.location
   sku_name                = "Standard"

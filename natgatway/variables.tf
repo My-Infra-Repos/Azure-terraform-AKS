@@ -5,7 +5,7 @@
 
 variable "app_name" {
   type        = string
-  default = "prm-nonprod"
+  default = "example-nonprod"
   description = "Application name. Use only lowercase letters and numbers"
 }
 

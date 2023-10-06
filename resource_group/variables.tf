@@ -5,6 +5,6 @@ variable "location" {
 
 variable "name" {
   type = string
-  default ="prm-stack-group"
+  default ="example-stack-group"
 
 }

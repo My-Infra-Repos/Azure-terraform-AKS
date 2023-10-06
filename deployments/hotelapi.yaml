@@ -14,12 +14,12 @@ spec:
     spec:
       containers:
       - name: hotel-api
-        image: acrpocprmapplication.azurecr.io/testapp/hotel:v1
+        image: acrpocexampleapplication.azurecr.io/testapp/hotel:v1
         ports:
         - containerPort: 8082
         env:
         - name: DATABASE_HOST
-          value: "pocprmdb-psql.postgres.database.azure.com"
+          value: "pocexampledb-psql.postgres.database.azure.com"
         - name: DATABASE_USER
           value: "psqladmin"
         - name: DATABASE_PASSWORD

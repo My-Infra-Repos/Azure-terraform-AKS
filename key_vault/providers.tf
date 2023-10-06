@@ -14,9 +14,9 @@ terraform {
 
   # Persist state in a storage account
     backend "azurerm" {
-    resource_group_name   = "tfstate-prm-non-prod"
-    storage_account_name  = "tfstprmaccount"
-    container_name        = "tfstprmcontainer"
+    resource_group_name   = "tfstate-example-non-prod"
+    storage_account_name  = "tfstexampleaccount"
+    container_name        = "tfstexamplecontainer"
     key                   = "kv.tfstate"
 
      }

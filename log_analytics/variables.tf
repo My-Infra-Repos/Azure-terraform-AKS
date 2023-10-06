@@ -5,7 +5,7 @@ variable "location" {
 }
 
 variable "loganalytics_name" {
-  default="prm-nonprod-logAnalytics"
+  default="example-nonprod-logAnalytics"
   type = string
 }
 

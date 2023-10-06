@@ -7,9 +7,9 @@ data "terraform_remote_state" "rg" {
   // backend = "remote"
   backend = "azurerm"
   config = {
-    resource_group_name   = "tfstate-prm-non-prod"
-    storage_account_name  = "tfstprmaccount"
-    container_name        = "tfstprmcontainer"
+    resource_group_name   = "tfstate-example-non-prod"
+    storage_account_name  = "tfstexampleaccount"
+    container_name        = "tfstexamplecontainer"
     key                   = "rg.tfstate"
 
   }
@@ -19,9 +19,9 @@ data "terraform_remote_state" "vnet" {
   // backend = "remote"
   backend = "azurerm"
   config = {
-    resource_group_name   = "tfstate-prm-non-prod"
-    storage_account_name  = "tfstprmaccount"
-    container_name        = "tfstprmcontainer"
+    resource_group_name   = "tfstate-example-non-prod"
+    storage_account_name  = "tfstexampleaccount"
+    container_name        = "tfstexamplecontainer"
     key                   = "vnet.tfstate"
 
   }
@@ -30,9 +30,9 @@ data "terraform_remote_state" "vnet" {
 data "terraform_remote_state" "acr" {
   backend="azurerm"
   config={
-    resource_group_name   = "tfstate-prm-non-prod"
-    storage_account_name  = "tfstprmaccount"
-    container_name        = "tfstprmcontainer"
+    resource_group_name   = "tfstate-example-non-prod"
+    storage_account_name  = "tfstexampleaccount"
+    container_name        = "tfstexamplecontainer"
     key                   = "acr.tfstate"
   }
 }
@@ -40,9 +40,9 @@ data "terraform_remote_state" "acr" {
 data "terraform_remote_state" "kv" {
   backend="azurerm"
   config={
-    resource_group_name   = "tfstate-prm-non-prod"
-    storage_account_name  = "tfstprmaccount"
-    container_name        = "tfstprmcontainer"
+    resource_group_name   = "tfstate-example-non-prod"
+    storage_account_name  = "tfstexampleaccount"
+    container_name        = "tfstexamplecontainer"
     key                   = "kv.tfstate"
   }
 }
@@ -50,9 +50,9 @@ data "terraform_remote_state" "kv" {
 data "terraform_remote_state" "kvs" {
   backend="azurerm"
   config={
-    resource_group_name   = "tfstate-prm-non-prod"
-    storage_account_name  = "tfstprmaccount"
-    container_name        = "tfstprmcontainer"
+    resource_group_name   = "tfstate-example-non-prod"
+    storage_account_name  = "tfstexampleaccount"
+    container_name        = "tfstexamplecontainer"
     key                   = "kvsecret.tfstate"
   }
 }
@@ -60,9 +60,9 @@ data "terraform_remote_state" "kvs" {
 data "terraform_remote_state" "aks" {
   backend="azurerm"
   config={
-    resource_group_name   = "tfstate-prm-non-prod"
-    storage_account_name  = "tfstprmaccount"
-    container_name        = "tfstprmcontainer"
+    resource_group_name   = "tfstate-example-non-prod"
+    storage_account_name  = "tfstexampleaccount"
+    container_name        = "tfstexamplecontainer"
     key                   = "aks.tfstate"
   }
 }

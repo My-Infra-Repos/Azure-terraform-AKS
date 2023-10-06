@@ -1,7 +1,7 @@
 variable "name" {
   
   type = string
-  default="prm-nonprod-db"
+  default="example-nonprod-db"
 }
 
 variable "location" {
@@ -15,5 +15,5 @@ variable "address_space" {
 }
 variable "dns_name" {
   type=string
-  default="prmnonprod.postgres.database.azure.com"
+  default="examplenonprod.postgres.database.azure.com"
 }
